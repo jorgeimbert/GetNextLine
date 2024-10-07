@@ -3,22 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line main.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jorgeimbert <jorgeimbert@student.42.fr>    +#+  +:+       +#+        */
+/*   By: jimbert- <jimbert-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 19:24:09 by jorgeimbert       #+#    #+#             */
-/*   Updated: 2024/10/05 18:21:31 by jorgeimbert      ###   ########.fr       */
+/*   Updated: 2024/10/07 15:09:09 by jimbert-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <fcntl.h>
-//#include "get_next_line.h"
+#include "get_next_line.h"
 
 int main(void)
 {
-    int fd;
+    int     fd;
     char    *next_line;
-    int count;
+    int     count;
 
     count = 0;
     fd = open("example.txt", O_RDONLY);

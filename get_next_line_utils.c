@@ -3,30 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jorgeimbert <jorgeimbert@student.42.fr>    +#+  +:+       +#+        */
+/*   By: jimbert- <jimbert-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 17:34:04 by jorgeimbert       #+#    #+#             */
-/*   Updated: 2024/10/05 19:58:54 by jorgeimbert      ###   ########.fr       */
+/*   Updated: 2024/10/07 15:09:09 by jimbert-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <fcntl.h>
 #include "get_next_line.h"
 
-// Buscamos un nuevo cartacter en la lista del contenedor STASH.
-int ft_found_newline(t_list *stash)
+// Buscamos un nuevo cartacter en la lista del contenedor PILE.
+int ft_found_newline(t_list *pile)
 {
     int     i;
     t_list  *actual;
     
-    if (stash == NULL)
+    if (pile == NULL)
         return(0);
-    actual = ft_lst_line(stash);
+    actual = ft_get_last_node(pile);
     i = 0;
     while (actual->content[i])
     {
-        if (actual->content[i] = '\n')
+        if (actual->content[i] == '\n')
             return(1);
         i++;
     }
@@ -34,28 +32,29 @@ int ft_found_newline(t_list *stash)
 }
 
 // Retornamos un puntero al último nodo de nuestro contenedor de almacenado.
-t_list  *ft_lst_get_last(t_list *stash)
+t_list  *ft_get_last_node(t_list *pile)
 {
     t_list  *actual;
 
-    actual = stash;
+    actual = pile;
     while (actual && actual->next)
         actual = actual->next;
     return(actual);
 }
 
 // Calculamos n char en linea ACTUAL y \n, ->en la memoria.
-void    ft_create_line(char **line, t_list *stash)
+void    ft_newline(char **line, t_list *pile)
 {
     int i;
     int len;
     
     len = 0;
-   while (stash)
+   while (pile)
    {
-        while (stash->content[i])
+        i = 0;
+        while (pile->content[i])
         {
-            if (stash = stash->content[i] = '\n')
+            if (pile = pile->content[i] = '\n')
             {
                 len++;
                 break;
@@ -63,21 +62,21 @@ void    ft_create_line(char **line, t_list *stash)
             len++;
             i++;
         }
-        stash = stash->next;
+        pile = pile->next;
     } 
     *line = malloc(sizeof(char) * (len + 1));
 }
 
 // Liberamos el contenedor STASH.
-void    free_stash()
+void    free_pile(t_list *pile)
 {
     t_list *actual;
     t_list *next;
  
-    actual = stash;
-    while (stash)
+    actual = pile;
+    while (actual)
     {
-        free(actual_content);
+        free(actual->content);
         next = actual->next;
         free(actual);
         actual = next;
