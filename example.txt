@@ -1,1 +1,15 @@
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eget dictum sapien. Phasellus semper justo quis bibendum dignissim. Aenean hendrerit, dolor vel convallis cursus, dolor felis consectetur diam, eget sagittis mi metus ut sapien. Donec lacus velit, dignissim vel varius at, consectetur non tellus. Etiam rutrum pharetra ipsum, sit amet tincidunt neque finibus et. Proin eu elit euismod, ultrices turpis ut, imperdiet libero. Fusce sagittis justo sit amet felis congue bibendum. Maecenas malesuada vulputate dignissim.
+Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos 
+de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias 
+desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la 
+imprenta) desconocido usó una galería de textos y los mezcló de tal manera que 
+logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que 
+tambien ingresó como texto de relleno en documentos electrónicos, quedando esen-
+cialmente igual al original. Fue popularizado en los 60s con la creación de las 
+hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más reciente-
+mente con software de autoedición, como por ejemplo Aldus PageMaker, el cual
+incluye versiones de Lorem Ipsum.
+No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en 
+documentos electrónicos, quedando esencialmente igual al original. Fue popula-
+rizado en los 60s con la creación de las hojas "Letraset", las cuales contenian 
+pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por 
+ejemplo Aldus PageMaker, el cualincluye versiones de Lorem Ipsum.
