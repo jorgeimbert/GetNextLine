@@ -6,13 +6,12 @@
 /*   By: jimbert- <jimbert-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 17:34:04 by jorgeimbert       #+#    #+#             */
-/*   Updated: 2024/10/21 18:13:35 by jimbert-         ###   ########.fr       */
+/*   Updated: 2024/10/24 18:00:08 by jimbert-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-// Buscamos un nuevo cartacter en la lista del contenedor PILE.
 int	ft_find_newline(t_list *pile)
 {
 	int		i;
@@ -35,7 +34,6 @@ int	ft_find_newline(t_list *pile)
 	return (0);
 }
 
-// Retornamos un puntero al último nodo de nuestro contenedor de almacenado.
 t_list	*ft_get_last_node(t_list *pile)
 {
 	t_list	*actual;
@@ -48,7 +46,6 @@ t_list	*ft_get_last_node(t_list *pile)
 	return (actual);
 }
 
-// Calculamos n char en linea ACTUAL y \n, ->reserva en la memoria.
 int	ft_newline(char **line, t_list *pile)
 {
 	int	i;
@@ -60,10 +57,11 @@ int	ft_newline(char **line, t_list *pile)
 		i = 0;
 		while (pile->content[i])
 		{
+			len++;
 			if (pile->content[i] == '\n')
 			{
 				len++;
-				break;
+				break ;
 			}
 			len++;
 			i++;
@@ -77,7 +75,6 @@ int	ft_newline(char **line, t_list *pile)
 	return (len);
 }
 
-// Liberamos memoria, nodos y contenido del contenedor PILE.
 void	ft_free_pile(t_list *pile)
 {
 	t_list	*actual;
@@ -93,7 +90,6 @@ void	ft_free_pile(t_list *pile)
 	}
 }
 
-// Contamos la longitud de chars sin inclur (\0)
 int	ft_strlen(const char *str)
 {
 	int	len;
