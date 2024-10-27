@@ -6,7 +6,7 @@
 /*   By: jimbert- <jimbert-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 17:34:04 by jorgeimbert       #+#    #+#             */
-/*   Updated: 2024/10/24 18:00:08 by jimbert-         ###   ########.fr       */
+/*   Updated: 2024/10/26 17:53:45 by jimbert-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ t_list	*ft_get_last_node(t_list *pile)
 	return (actual);
 }
 
-int	ft_newline(char **line, t_list *pile)
+int	ft_create_newline(char **line, t_list *pile)
 {
 	int	i;
 	int	len;

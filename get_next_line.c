@@ -6,7 +6,7 @@
 /*   By: jimbert- <jimbert-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 19:24:09 by jorgeimbert       #+#    #+#             */
-/*   Updated: 2024/10/24 19:46:43 by jimbert-         ###   ########.fr       */
+/*   Updated: 2024/10/27 14:06:44 by jimbert-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*get_next_line(int fd)
 	char			*next_line;
 	int				char_readed;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, &next_line, 0) < 0)
+	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	char_readed = 1;
 	next_line = NULL;
@@ -29,11 +29,14 @@ char	*get_next_line(int fd)
 	if (next_line == NULL)
 		return (NULL);
 	ft_clean_pile (&pile);
-	if (next_line[0] == '\0')
+	if (pile && ft_strlen(pile->content) == 0)
 	{
-		free(next_line);
-		return (NULL);
+		free(pile->content);
+		free(pile);
+		pile = NULL;
 	}
+	if (next_line[0] == '\0')
+		return (free(next_line), NULL);
 	return (next_line);
 }
 
@@ -43,6 +46,8 @@ void	ft_read_and_pile(int fd, t_list **pile, int *char_readed_ptr)
 
 	while (!ft_find_newline(*pile) && *char_readed_ptr != 0)
 	{
+		if (BUFFER_SIZE <= 0)
+			return ;
 		buff = malloc(sizeof(char) * (BUFFER_SIZE + 1));
 		if (buff == NULL)
 			return ;
@@ -94,7 +99,7 @@ void	ft_extract_line(t_list *pile, char **next_line)
 
 	if (pile == NULL)
 		return ;
-	ft_newline(next_line, pile);
+	ft_create_newline(next_line, pile);
 	if (*next_line == NULL)
 		return ;
 	len = 0;
@@ -144,7 +149,7 @@ void	ft_clean_pile(t_list **pile)
 	*pile = clean_node;
 }
 
-*/int	main(void)
+/*int	main(void)
 {
 	int		fd;
 	char	*next_line;
